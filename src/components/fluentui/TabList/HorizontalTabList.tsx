@@ -1,5 +1,6 @@
 'use client';
 import * as React from "react";
+import '../../../styles/styles.css'
 import {
   makeStyles,
   SelectTabData,
@@ -8,6 +9,7 @@ import {
   Tab,
   TabList,
   TabValue,
+  tokens,
 } from "@fluentui/react-components";
 import { tab, tabValue } from "../Table/table-static-data/table-static-data";
 
@@ -17,9 +19,28 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    ...shorthands.padding("50px", "20px"),
+    ...shorthands.padding("10px", "4px"),
     rowGap: "20px",
+    paddingLeft: '4px',
+    paddingTop:"1px"
   },
+  TabStyle: {
+    backgroundColor: "black",
+    '&:hover':{
+      backgroundColor:"#e6e6e6"
+    },
+    marginRight:'2px',
+    ...shorthands.border('1px solid black'),
+    '& span': {
+      color: "#ffffff !important",
+    },
+    '&:hover span': {
+      color: '#333 !important',
+    },
+  },
+  paddingRemove: {
+    paddingLeft: '4px',
+  }
 });
 interface HorizontalTabListProps {
   values: {
@@ -42,7 +63,7 @@ const HorizontalTabList = (props: HorizontalTabListProps) => {
         {
           tab?.map((item, idx) => {
             return (
-              <Tab key={idx} value={item}>{tabValue[idx]}</Tab>
+              <Tab className={styles.TabStyle} key={idx} value={item}>{tabValue[idx]}</Tab>
             )
           })
         }

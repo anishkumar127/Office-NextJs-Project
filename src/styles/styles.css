@@ -1,0 +1,18 @@
+.tab-style{
+    border: 1px solid purple !important;
+    color: #fff;
+    background-color: #212121 !important;
+}
+
+.border-black {
+    border-color: black !important;
+  }
+  
+  .bg-black {
+    background-color: black !important;
+  }
+  
+  .text-white {
+    color: white !important;
+  }
+  
